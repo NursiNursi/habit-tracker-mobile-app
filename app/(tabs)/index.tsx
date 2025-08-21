@@ -53,6 +53,14 @@ export default function Index() {
     </View>
   );
 
+  const handleDeleteHabit = async (id: string) => {
+    try {
+      await databases.deleteDocument(DATABASE_ID, HABITS_COLLECTION_ID, id);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     if (user) {
       const channel = `databases.${DATABASE_ID}.collections.${HABITS_COLLECTION_ID}.documents`;
@@ -112,6 +120,13 @@ export default function Index() {
               overshootRight={false}
               renderLeftActions={renderLeftActions}
               renderRightActions={renderRightActions}
+              onSwipeableOpen={(direction) => {
+                if (direction === "left") {
+                  handleDeleteHabit(habit.$id);
+                }
+
+                swipeableRefs.current[habit.$id]?.close();
+              }}
             >
               <Surface style={styles.card}>
                 <View style={styles.cardContent}>
