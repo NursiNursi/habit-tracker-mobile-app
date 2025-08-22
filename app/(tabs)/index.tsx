@@ -179,6 +179,7 @@ const styles = StyleSheet.create({
   },
 
   card: {
+    marginHorizontal: 8,
     marginBottom: 18,
     borderRadius: 18,
     backgroundColor: "#f7f2fa",
@@ -252,6 +253,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#e53935",
     borderRadius: 18,
+    marginHorizontal: 8,
     marginBottom: 18,
     marginTop: 2,
     paddingLeft: 16,
@@ -262,9 +264,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#4caf50",
     borderRadius: 18,
+    marginHorizontal: 8,
     marginBottom: 18,
     marginTop: 2,
     paddingRight: 16,
   },
 });
-
